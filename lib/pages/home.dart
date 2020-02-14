@@ -1,5 +1,6 @@
 import 'package:douyin/components/btm_bar.dart';
 import 'package:douyin/components/btm_content.dart';
+import 'package:douyin/components/rotate_album.dart';
 import 'package:douyin/components/top_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
           height: 280 * rpx,
           width: 400*rpx,
           child: Container(
-            decoration: BoxDecoration(color: Colors.pink[400]),
+//            decoration: BoxDecoration(color: Colors.pink[400]),
             child: BtmContent(),
           ),
         ),
@@ -33,9 +34,10 @@ class Home extends StatelessWidget {
           top: 0.2 * h,
           right: 0,
           width: 0.25*w,
-          height: 0.3*h,
+          height: 0.4*h,
           child: Container(
-            decoration: BoxDecoration(color: Colors.amberAccent[200]),
+//            decoration: BoxDecoration(color: Colors.amberAccent[200]),
+            child: getButtonList(),
           ),
         ),
         Positioned(
@@ -44,7 +46,8 @@ class Home extends StatelessWidget {
           bottom: 0,
           right: 0,
           child: Container(
-            decoration: BoxDecoration(color: Colors.cyan[300]),
+//            decoration: BoxDecoration(color: Colors.cyan[300]),
+            child: RotateAlbum(),
           ),
         )
       ],

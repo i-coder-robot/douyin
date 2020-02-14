@@ -1,3 +1,4 @@
+import 'package:douyin/components/rotate_album.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
@@ -20,7 +21,7 @@ class BtmContent extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-              Icon(Icons.music_note),
+              RotateAlbum(),
 //              Container(
 //                  width: w * 0.7,
 //                  height: h * 0.5,
