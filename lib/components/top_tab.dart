@@ -30,6 +30,7 @@ class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
               Icon(
                 Icons.search,
                 size: rpx*60,
+                color: Colors.white,
               ),
             ],
           ),
@@ -67,6 +68,7 @@ class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
               Icon(
                 Icons.live_tv,
                 size: rpx * 60,
+                color: Colors.white,
               ),
             ],
           ),

@@ -13,7 +13,7 @@ class IconText extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
             icon,
-          Text(text,style: TextStyle(color: Colors.white),),
+          text==""?Container():Text(text,style: TextStyle(color: Colors.white),),
         ],
       ),
     );

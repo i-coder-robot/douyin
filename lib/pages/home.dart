@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           width: w,
           height: 150 * rpx,
           child: Container(
-            decoration: BoxDecoration(color: Colors.pinkAccent),
+            decoration: BoxDecoration(color: Colors.black),
             child: TopTab(),
           ),
         ),

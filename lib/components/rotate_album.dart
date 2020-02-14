@@ -14,12 +14,12 @@ class _RotateAlbumState extends State<RotateAlbum>
   void initState() {
     // TODO: implement initState
     super.initState();
-    //设置动画，duration 2秒转一圈
+    //设置动画，duration 4秒转一圈
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(seconds: 4));
     //Tween<T extends dynamic> extends Animatable<T>
     animation = RotationTransition(
-        child: Icon(Icons.music_note),
+        child: Icon(Icons.music_note,color: Colors.white,),
         turns: Tween(begin: 0.0, end: 1.0).animate(_controller)
           ..addStatusListener((status) {
             if(status==AnimationStatus.completed){

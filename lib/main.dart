@@ -11,7 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+//        primarySwatch: Colors.blue,
+        primaryColor: Colors.black,
+          primaryColorDark:Colors.black,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -32,11 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var rpx = MediaQuery.of(context).size.width / 750;
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Home(),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: rpx * 100.0,
-          decoration: BoxDecoration(color: Colors.blueAccent[200]),
+          decoration: BoxDecoration(color: Colors.black),
           child: BtmBar(),
         ),
       ),
