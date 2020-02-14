@@ -30,7 +30,7 @@ class BtmContent extends StatelessWidget {
                 height: 30.0,
                 child: MarqueeWidget(
                   text: "美食分享和你们一样，从生命起始就已注定",
-                  textStyle: new TextStyle(color:Colors.white,fontSize: 16.0),
+                  textStyle: new TextStyle(color: Colors.white, fontSize: 16.0),
                   scrollAxis: Axis.horizontal,
                 ),
               )
