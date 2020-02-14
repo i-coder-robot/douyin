@@ -24,7 +24,13 @@ class BtmContent extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-              RotateAlbum(),
+//              RotateAlbum(),
+              Container(
+                child: Icon(
+                  Icons.music_note,
+                  color: Colors.white,
+                ),
+              ),
               Container(
                 width: 138.0,
                 height: 30.0,

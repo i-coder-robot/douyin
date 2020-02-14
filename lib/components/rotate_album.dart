@@ -19,17 +19,18 @@ class _RotateAlbumState extends State<RotateAlbum>
     _controller =
         AnimationController(vsync: this, duration: Duration(seconds: 4));
     //Tween<T extends dynamic> extends Animatable<T>
-    animation = RotationTransition(
+    animation = SizeTransition(
+      axis: Axis.horizontal,
         child: Icon(
           Icons.music_note,
           color: Colors.white,
         ),
-        turns: Tween(begin: 0.0, end: 1.0).animate(_controller)
-          ..addStatusListener((status) {
-            if (status == AnimationStatus.completed) {
-              _controller.forward(from: 0.0);
-            }
-          }));
+        sizeFactor: _controller..addStatusListener((status){
+          if (status==AnimationStatus.completed){
+            _controller.forward(from: 0.0);
+          }
+        }),
+       );
     _controller.forward(from: 0.0);
   }
 
