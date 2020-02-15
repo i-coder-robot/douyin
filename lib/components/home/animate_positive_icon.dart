@@ -39,8 +39,7 @@ class _AnimatePositiveIconState extends State<AnimatePositiveIcon>
     animation1 = Tween(begin: 1.0, end: 0.0).animate(controller1)
       ..addListener(() {
         setState(() {});
-      })
-      ..addStatusListener((status) {
+      })..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller2.forward(from: 0);
           currentAnimation = animation2;
@@ -51,8 +50,7 @@ class _AnimatePositiveIconState extends State<AnimatePositiveIcon>
     animation2 = Tween(begin: 0.0, end: 1.2).animate(controller2)
       ..addListener(() {
         setState(() {});
-      })
-      ..addStatusListener((status) {
+      })..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller3.forward(from: 0);
           currentAnimation = animation3;
@@ -69,16 +67,19 @@ class _AnimatePositiveIconState extends State<AnimatePositiveIcon>
         }
       });
     currentAnimation = animation1;
-    controller1.forward(from: 0);
+//    controller1.forward(from: 0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Icon(
-      Icons.favorite,
-      size: widget.size * currentAnimation.value,
-      color: currentColor,
+        child: IconButton(icon:Icon(Icons.favorite,
+          size: widget.size * currentAnimation.value,
+          color: currentColor,),
+          onPressed: (){
+            controller1.forward(from: 0);
+          },
+
     ));
   }
 }
