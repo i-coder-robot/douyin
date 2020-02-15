@@ -4,19 +4,21 @@ import 'package:douyin/pages/reply_full_list.dart';
 import 'package:flutter/material.dart';
 import 'package:douyin/model/reply_model.dart';
 
-genReplyList(List<ReplyModel> replies) {
+genReplyList(List<ReplyModel> replies,ScrollController controller) {
   return ListView.builder(
     //对于这种ListView.builder也要给一个固定的高度，设置shrinkWrap: true,
     shrinkWrap: true,
+    controller: controller,
     itemCount: replies.length,
     itemBuilder: (context, index) {
-      return ReplyList(replyModel: replies[index]);
+      return ReplyList(replyModel: replies[index],controller: controller,);
     },
   );
 }
 
-genAfterReplyList(List<ReplyModel> replies) {
+genAfterReplyList(List<ReplyModel> replies,ScrollController controller) {
   return ListView.builder(
+    controller: controller,
     shrinkWrap: true,
     itemCount: replies.length,
     itemBuilder: (context, index) {

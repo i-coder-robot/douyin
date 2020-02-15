@@ -23,22 +23,27 @@ class ReplyFullList extends StatelessWidget {
     replies.add(replyModel);
     replies.add(replyModel);
     replies.add(replyModel);
-    return Column(
-      //对于Column加载是无限延长的，所以要给他一个最小高度
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Container(
-          height: 80 * rpx,
-          child: ListTile(
-            title: Center(child: Text("10条评论")),
-            //头部位置
-            leading: Container(width: 10 * rpx,),
-            //尾部位置
-            trailing: IconButton(icon: Icon(Icons.close), onPressed: () {},),
+
+    ScrollController _controller = ScrollController();
+
+    return SingleChildScrollView(
+      child: Column(
+        //对于Column加载是无限延长的，所以要给他一个最小高度
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Container(
+            height: 80 * rpx,
+            child: ListTile(
+              title: Center(child: Text("10条评论")),
+              //头部位置
+              leading: Container(width: 10 * rpx,),
+              //尾部位置
+              trailing: IconButton(icon: Icon(Icons.close), onPressed: () {},),
+            ),
           ),
-        ),
-        genReplyList(replies),
-      ],
+          genReplyList(replies,_controller),
+        ],
+      ),
     );
   }
 }
