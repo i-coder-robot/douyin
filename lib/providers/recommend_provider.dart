@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 class RecommendProvider with ChangeNotifier{
   bool isFav = false;
   int favCount = 0;
+  bool isShowBottom = true;
 
-  ReplyModel reply;
+  ReplyModel replyModel;
 
   RecommendProvider(){
     getReply();
   }
 
+  var screenHeight;
+
   getReply(){
-    reply = ReplyModel(
+    replyModel = ReplyModel(
         isFav: true,
         afterReplies: List<ReplyModel>(),
         replyContent: "真可爱，真好看，真厉害~真可爱，真好看，真厉害~",
@@ -20,7 +23,7 @@ class RecommendProvider with ChangeNotifier{
         "https://pic2.zhimg.com/v2-a88cd7618933272ca681f86398e6240d_xll.jpg",
         replyMakerName: "ABC",
         whenReplied: "3小时前");
-    return reply;
+    return replyModel;
   }
 
   tapFav(){
@@ -34,6 +37,14 @@ class RecommendProvider with ChangeNotifier{
     notifyListeners();
   }
 
+  setScreenHeight(height){
+    screenHeight=height;
+    notifyListeners();
+  }
+  hideBottomBar(){
+    isShowBottom=false;
+    notifyListeners();
+  }
 
 }
 

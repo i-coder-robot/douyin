@@ -19,6 +19,9 @@ showBottom(context, provider) {
   provider.setScreenHeight(h);
   provider.hideBottomBar();
   showModalBottomSheet(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadiusDirectional.circular(10.0),
+    ),
       context: context,
       builder: (_) {
         return Container(

@@ -16,8 +16,8 @@ class ReplyFullList extends StatelessWidget {
         .of(context)
         .size
         .width / 750;
-    RecommendProvider provider = Provider.of<RecommendProvider>(context);
-    ReplyModel replyModel = provider.reply;
+    RecommendProvider provider = Provider.of<RecommendProvider>(pCtx);
+    ReplyModel replyModel = provider.replyModel;
     List<ReplyModel> replies = List<ReplyModel>();
     replies.add(replyModel);
     replies.add(replyModel);

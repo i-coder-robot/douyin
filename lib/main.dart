@@ -35,7 +35,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Home(),
+      body: MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              builder: (content)=>RecommendProvider(),
+            )
+          ],
+          child: Home()),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: rpx * 100.0,
