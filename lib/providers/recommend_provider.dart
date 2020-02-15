@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class RecommendProvider with ChangeNotifier{
   bool isFav = false;
-  int favCount = 0;
+  int favCount = 666;
   bool isShowBottom = true;
 
   ReplyModel replyModel;

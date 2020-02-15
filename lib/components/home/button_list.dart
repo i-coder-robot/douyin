@@ -3,6 +3,7 @@ import 'package:douyin/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'animate_positive_icon.dart';
 import 'icon_text.dart';
 
 class ButtonList extends StatefulWidget {
@@ -13,7 +14,9 @@ class ButtonList extends StatefulWidget {
 class _ButtonListState extends State<ButtonList> {
   @override
   Widget build(BuildContext context) {
+    var rpx = MediaQuery.of(context).size.width / 750;
     RecommendProvider provider = Provider.of<RecommendProvider>(context);
+    double iconSize = 70 * rpx;
     return Container(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -50,16 +53,18 @@ class _ButtonListState extends State<ButtonList> {
               ],
             ),
           ),
+          //红心
           IconText(
               iconButton: IconButton(
-                icon: Icon(
-                  Icons.favorite,
-                  size: 50.0,
-                  color: Colors.redAccent,
+                icon: AnimatePositiveIcon(
+                  size: iconSize,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  provider.tapFav();
+                },
               ),
-              text: "999W"),
+              text: "${provider.favCount}"),
+          //回复
           IconText(
               iconButton: IconButton(
                 icon: Icon(
@@ -68,9 +73,7 @@ class _ButtonListState extends State<ButtonList> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  print("comment pressed");
-                  showBottom(context,provider);
-                  print("22222222");
+                  showBottom(context, provider);
                 },
               ),
               text: "111"),
