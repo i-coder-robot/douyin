@@ -13,37 +13,54 @@ class AfterReply extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Container(
-            width: 100 * rpx,
-          ),
-          Container(
-            width: 550 * rpx,
-            child: Row(
-              children: <Widget>[
-                Container(
-                  width: 70 * rpx,
-                  child: CircleAvatar(
-                    backgroundImage:
-                    NetworkImage("${afterReply.replyMakerAvatar}"),
+          Row(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Container(
+                    width: 100 * rpx,
                   ),
+                  Container(
+                    width: 550 * rpx,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          width: 70 * rpx,
+                          height: 70 * rpx,
+                          padding: EdgeInsets.all(5 * rpx),
+                          child: CircleAvatar(
+                            backgroundImage:
+                            NetworkImage("${afterReply.replyMakerAvatar}"),
+                          ),
+                        ),
+                        Container(
+                          width: 480 * rpx,
+                          child: ListTile(
+                            title: Text("${afterReply.replyMakerName}"),
+                            subtitle: Text(
+                              "${afterReply.replyContent}",
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+              Container(
+                width: 100 * rpx,
+                child: IconButton(
+                  icon: Icon(Icons.favorite_border),
+                  onPressed: () {},
                 ),
-                Container(
-                  width: 480 * rpx,
-                  child: ListTile(
-                    title: Text("${afterReply.replyMakerName}"),
-                    subtitle: Text("${afterReply.replyContent}",maxLines: 2,overflow: TextOverflow.ellipsis,),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            width: 100 * rpx,
-            child: IconButton(
-              icon:Icon(Icons.favorite_border),
-              onPressed: (){},
-            ),
-          ),
+              ),
+            ],
+          )
+
         ],
       ),
     );

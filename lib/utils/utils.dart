@@ -1,4 +1,5 @@
 import 'package:douyin/components/recommend/after_reply.dart';
+import 'package:douyin/components/recommend/reply_list.dart';
 import 'package:douyin/pages/reply_full_list.dart';
 import 'package:flutter/material.dart';
 import 'package:douyin/model/reply_model.dart';
@@ -9,7 +10,19 @@ genReplyList(List<ReplyModel> replies) {
     shrinkWrap: true,
     itemCount: replies.length,
     itemBuilder: (context, index) {
-      return AfterReply(afterReply: replies[index]);
+      return ReplyList(replyModel: replies[index]);
+    },
+  );
+}
+
+genAfterReplyList(List<ReplyModel> replies) {
+  return ListView.builder(
+    shrinkWrap: true,
+    itemCount: replies.length,
+    itemBuilder: (context, index) {
+      return AfterReply(
+        afterReply: replies[index],
+      );
     },
   );
 }
@@ -19,9 +32,9 @@ showBottom(context, provider) {
   provider.setScreenHeight(h);
   provider.hideBottomBar();
   showModalBottomSheet(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadiusDirectional.circular(10.0),
-    ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusDirectional.circular(10.0),
+      ),
       context: context,
       builder: (_) {
         return Container(

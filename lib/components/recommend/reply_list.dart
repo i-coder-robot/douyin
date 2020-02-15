@@ -21,6 +21,8 @@ class ReplyList extends StatelessWidget {
           children: <Widget>[
             Container(
               width: 100 * rpx,
+              height: 100 * rpx,
+              padding: EdgeInsets.all(10*rpx),
               child: CircleAvatar(
                 backgroundImage: NetworkImage("${replyModel.replyMakerAvatar}"),
               ),
@@ -49,7 +51,7 @@ class ReplyList extends StatelessWidget {
             ),
           ],
         ),
-        genReplyList(replies),
+        genAfterReplyList(replies),
       ],
     );
   }
