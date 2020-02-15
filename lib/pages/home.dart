@@ -1,8 +1,8 @@
-import 'package:douyin/components/btm_bar.dart';
-import 'package:douyin/components/btm_content.dart';
-import 'package:douyin/components/rotate_album.dart';
-import 'package:douyin/components/rotate_head_pic.dart';
-import 'package:douyin/components/top_tab.dart';
+import 'package:douyin/components/home/btm_bar.dart';
+import 'package:douyin/components/home/btm_content.dart';
+import 'package:douyin/components/home/rotate_album.dart';
+import 'package:douyin/components/home/rotate_head_pic.dart';
+import 'package:douyin/components/home/top_tab.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

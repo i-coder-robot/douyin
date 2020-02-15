@@ -1,4 +1,4 @@
-import 'package:douyin/components/btm_bar.dart';
+import 'package:douyin/components/home/btm_bar.dart';
 import 'package:douyin/pages/home.dart';
 import 'package:flutter/material.dart';
 

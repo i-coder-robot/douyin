@@ -1,5 +1,5 @@
-import 'package:douyin/components/add_icon.dart';
-import 'package:douyin/components/icon_text.dart';
+import 'package:douyin/components/home/add_icon.dart';
+import 'package:douyin/components/home/icon_text.dart';
 import 'package:flutter/material.dart';
 
 class BtmBar extends StatelessWidget {
@@ -25,12 +25,13 @@ getBtmContentText(String content, bool isSelected) {
     style: isSelected
         ? TextStyle(
             color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold)
-        : TextStyle(color:Colors.grey[400],fontSize: 14.0),
+        : TextStyle(color: Colors.grey[400], fontSize: 14.0),
   );
 }
 
 getButtonList() {
   return Column(
+    mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       Container(
         width: 60,
@@ -64,9 +65,27 @@ getButtonList() {
           ],
         ),
       ),
-      IconText(icon: Icon(Icons.favorite,size: 50.0,color: Colors.redAccent,), text: "999W"),
-      IconText(icon: Icon(Icons.feedback,size: 50.0,color: Colors.white,), text: ""),
-      IconText(icon: Icon(Icons.reply,size: 50.0,color: Colors.white,), text: ""),
+      IconText(
+          icon: Icon(
+            Icons.favorite,
+            size: 50.0,
+            color: Colors.redAccent,
+          ),
+          text: "999W"),
+      IconText(
+          icon: Icon(
+            Icons.feedback,
+            size: 50.0,
+            color: Colors.white,
+          ),
+          text: "111"),
+      IconText(
+          icon: Icon(
+            Icons.reply,
+            size: 50.0,
+            color: Colors.white,
+          ),
+          text: ""),
     ],
   );
 }

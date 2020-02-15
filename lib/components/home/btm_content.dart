@@ -1,4 +1,4 @@
-import 'package:douyin/components/rotate_album.dart';
+import 'package:douyin/components/home/rotate_album.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee_flutter/marquee_flutter.dart';
 
@@ -9,6 +9,7 @@ class BtmContent extends StatelessWidget {
     var h = MediaQuery.of(context).size.height;
     return Container(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
             title: Text(
