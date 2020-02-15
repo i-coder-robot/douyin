@@ -23,32 +23,41 @@ class AfterReply extends StatelessWidget {
                   Container(
                     width: 550 * rpx,
                     child: Row(
+                      //让一行紧凑一些，在纵向的排列
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
+                          margin: EdgeInsets.only(top: 15 * rpx),
                           width: 70 * rpx,
                           height: 70 * rpx,
-                          padding: EdgeInsets.all(5 * rpx),
+                          padding: EdgeInsets.all(10 * rpx),
                           child: CircleAvatar(
                             backgroundImage:
-                            NetworkImage("${afterReply.replyMakerAvatar}"),
+                                NetworkImage("${afterReply.replyMakerAvatar}"),
                           ),
                         ),
                         Container(
                           width: 480 * rpx,
                           child: ListTile(
                             title: Text("${afterReply.replyMakerName}"),
-                            subtitle: Text(
-                              "${afterReply.replyContent}",
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                            //让多个文本连接在一起的一个控件RichText,里面的TextSpan,类似html的span
+                            subtitle: RichText(
+                              text:
+                                  TextSpan(text: "${afterReply.replyContent}",
+                                  style: TextStyle(color: Colors.grey[500]),
+                                  children:[TextSpan(text: "  ${afterReply.whenReplied}")],
+                                  ),
                             ),
+//                            subtitle: Text(
+//                              "${afterReply.replyContent}",
+//                              maxLines: 2,
+//                              overflow: TextOverflow.ellipsis,
+//                            ),
                           ),
                         )
                       ],
                     ),
                   ),
-
                 ],
               ),
               Container(
@@ -60,7 +69,6 @@ class AfterReply extends StatelessWidget {
               ),
             ],
           )
-
         ],
       ),
     );
