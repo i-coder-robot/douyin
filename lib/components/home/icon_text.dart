@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class IconText extends StatelessWidget {
 
-  const IconText({Key key,this.icon,this.text}):super(key:key);
-  final Icon icon;
+  const IconText({Key key,this.iconButton,this.text}):super(key:key);
+  final IconButton iconButton;
   final String text;
 
   @override
@@ -12,7 +12,7 @@ class IconText extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-            icon,
+          iconButton,
           text==""?Container():Text(text,style: TextStyle(color: Colors.white),),
         ],
       ),
