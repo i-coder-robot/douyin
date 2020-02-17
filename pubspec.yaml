@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   marquee_flutter: ^0.1.4
   provider: ^3.2.0
+  lpinyin: ^1.0.9
+  sticky_headers: ^0.1.8+1
 
 dev_dependencies:
   flutter_test:

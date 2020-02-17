@@ -1,8 +1,11 @@
+import 'package:douyin/providers/AtUserProvider.dart';
 import 'package:douyin/components/home/btm_bar.dart';
 import 'package:douyin/pages/home.dart';
 import 'package:douyin/providers/recommend_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'components/friends/friend_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,9 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
           providers: [
             ChangeNotifierProvider(
               builder: (content)=>RecommendProvider(),
-            )
+            ),
+            ChangeNotifierProvider(
+              builder: (context)=>AtUserProvider(),
+            ),
           ],
-          child: Home()),
+//          child: Home(),
+          child: FriendList(),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: rpx * 100.0,
