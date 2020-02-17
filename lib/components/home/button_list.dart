@@ -3,7 +3,8 @@ import 'package:douyin/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'animate_positive_icon.dart';
+
+import 'animated_icon_widget.dart';
 import 'icon_text.dart';
 
 class ButtonList extends StatefulWidget {
@@ -17,18 +18,68 @@ class _ButtonListState extends State<ButtonList> {
     var rpx = MediaQuery.of(context).size.width / 750;
     RecommendProvider provider = Provider.of<RecommendProvider>(context);
     double iconSize = 70 * rpx;
+
+    List<IconAnimationStage> stage1 = List<IconAnimationStage>();
+    stage1.add(IconAnimationStage(
+      color: Colors.grey[100],
+      start: 1.0,
+      end: 0.0,
+      duration: Duration(milliseconds: 200)
+    ));
+    stage1.add(IconAnimationStage(
+      color: Colors.redAccent,
+      start: 0.0,
+      end: 1.3,
+      duration: Duration(milliseconds: 300)
+    ));
+    stage1.add(IconAnimationStage(
+      color: Colors.redAccent,
+      start: 1.3,
+      end: 1.0,
+      duration: Duration(milliseconds: 100)
+    ));
+
+    List<IconAnimationStage> stage2 = List<IconAnimationStage>();
+    stage2.add(IconAnimationStage(
+      color: Colors.grey[100],
+      start: 1.0,
+      end: 1.2,
+      duration: Duration(milliseconds: 200)
+    ));
+    stage2.add(IconAnimationStage(
+      color: Colors.grey[100],
+      start: 1.2,
+      end: 1.0,
+      duration: Duration(milliseconds: 200)
+    ));
+
+    List<IconAnimationStage> stage3 = List<IconAnimationStage>();
+    stage3.add(IconAnimationStage(
+        color: Colors.redAccent,
+        start: 1.0,
+        end: 1.2,
+        duration: Duration(milliseconds: 200)
+    ));
+    stage3.add(IconAnimationStage(
+        color: Colors.grey[100],
+        start: 1.2,
+        end: 1.0,
+        duration: Duration(milliseconds: 200)
+    ));
+
+
     return Container(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Container(
-            width: 60,
-            height: 70,
+            width: 90*rpx,
+            height: 105*rpx,
             child: Stack(
               children: <Widget>[
                 Container(
-                  width: 60,
-                  height: 60,
+                  width: 90*rpx,
+                  height: 90*rpx,
                   child: CircleAvatar(
                     backgroundImage: NetworkImage(
                         "https://pic3.zhimg.com/v2-28ccd0256a1ff532bab628f913bea219_im.jpg"),
@@ -36,10 +87,10 @@ class _ButtonListState extends State<ButtonList> {
                 ),
                 Positioned(
                   bottom: 0,
-                  left: 17.5,
+                  left: 25*rpx,
                   child: Container(
-                    width: 25,
-                    height: 25,
+                    width: 40*rpx,
+                    height: 40*rpx,
                     decoration: BoxDecoration(
                         color: Colors.redAccent,
                         borderRadius: BorderRadius.circular(25)),
@@ -55,38 +106,48 @@ class _ButtonListState extends State<ButtonList> {
           ),
           //红心
           IconText(
-              iconButton: IconButton(
-                icon: AnimatePositiveIcon(
-                  size: iconSize,
-                ),
-                onPressed: () {
+              text: "${provider.favCount}",
+              icon: !provider.isFav ? AnimatedIconWidget(
+                stageList: stage1,
+                icon: Icons.favorite,
+                size: iconSize,
+                provider: provider,
+                callBack: (){
+                  provider.tapFav();
+                },
+            ):AnimatedIconWidget(
+                stageList: stage3,
+                icon: Icons.favorite,
+                size: iconSize,
+                provider: provider,
+                callBack: (){
                   provider.tapFav();
                 },
               ),
-              text: "${provider.favCount}"),
+          ),
+
+
           //回复
           IconText(
-              iconButton: IconButton(
-                icon: Icon(
-                  Icons.comment,
-                  size: 50.0,
-                  color: Colors.white,
-                ),
-                onPressed: () {
+            text: "111",
+              icon: AnimatedIconWidget(
+                stageList: stage2,
+                icon:Icons.comment,
+                size: iconSize,
+                callBackDelay: Duration(milliseconds: 200),
+                callBack: (){
                   showBottom(context, provider);
                 },
               ),
-              text: "111"),
+             ),
           IconText(
-              iconButton: IconButton(
-                icon: Icon(
-                  Icons.reply,
-                  size: 50.0,
-                  color: Colors.white,
-                ),
-                onPressed: () {},
+            text: "888",
+              icon: AnimatedIconWidget(
+                stageList: stage2,
+                icon: Icons.reply,
+                size: iconSize,
               ),
-              text: ""),
+              ),
         ],
       ),
     );

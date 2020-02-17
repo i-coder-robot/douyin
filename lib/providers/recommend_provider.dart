@@ -2,7 +2,7 @@ import 'package:douyin/model/reply_model.dart';
 import 'package:flutter/material.dart';
 
 class RecommendProvider with ChangeNotifier{
-  bool isFav = false;
+  bool isFav = true;
   int favCount = 666;
   bool isShowBottom = true;
 
@@ -30,7 +30,6 @@ class RecommendProvider with ChangeNotifier{
     this.isFav=!this.isFav;
     if(isFav){
       this.favCount--;
-
     }else{
       this.favCount++;
     }

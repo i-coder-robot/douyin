@@ -29,11 +29,11 @@ class _AnimatePositiveIconState extends State<AnimatePositiveIcon>
 
     currentColor = Colors.grey[100];
     controller1 =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 150));
     controller2 =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
     controller3 =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 100));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 60));
 
     //动画就是用一个起始状态，到结束状态，然后给一个controller，controller设置多少时间动画结束
     animation1 = Tween(begin: 1.0, end: 0.0).animate(controller1)
@@ -82,4 +82,5 @@ class _AnimatePositiveIconState extends State<AnimatePositiveIcon>
 
     ));
   }
+
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'animated_icon_widget.dart';
 
 class IconText extends StatelessWidget {
 
-  const IconText({Key key,this.iconButton,this.text}):super(key:key);
-  final IconButton iconButton;
+  const IconText({Key key,this.icon,this.text}):super(key:key);
+  final AnimatedIconWidget icon;
   final String text;
 
   @override
@@ -12,7 +13,7 @@ class IconText extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          iconButton,
+          icon,
           text==""?Container():Text(text,style: TextStyle(color: Colors.white),),
         ],
       ),
