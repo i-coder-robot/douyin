@@ -1,9 +1,9 @@
-import 'package:douyin/components/home/add_icon.dart';
+import 'package:douyin/components/bottom/add_icon.dart';
 import 'package:douyin/components/home/icon_text.dart';
 import 'package:douyin/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-class BtmBar extends StatelessWidget {
+class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(

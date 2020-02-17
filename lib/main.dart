@@ -1,5 +1,5 @@
 import 'package:douyin/providers/AtUserProvider.dart';
-import 'package:douyin/components/home/btm_bar.dart';
+import 'package:douyin/components/bottom/bottom_bar.dart';
 import 'package:douyin/pages/home.dart';
 import 'package:douyin/providers/recommend_provider.dart';
 import 'package:flutter/material.dart';
@@ -47,14 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (context)=>AtUserProvider(),
             ),
           ],
-//          child: Home(),
-          child: FriendList(),
+          child: Home(),
+//好友列表，吸顶效果
+//          child: FriendList(),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: rpx * 100.0,
           decoration: BoxDecoration(color: Colors.black),
-          child: BtmBar(),
+          child: BottomBar(),
         ),
       ),
     );

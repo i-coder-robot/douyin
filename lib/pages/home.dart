@@ -1,4 +1,4 @@
-import 'package:douyin/components/home/btm_bar.dart';
+import 'package:douyin/components/bottom/bottom_bar.dart';
 import 'package:douyin/components/home/btm_content.dart';
 import 'package:douyin/components/home/button_list.dart';
 import 'package:douyin/components/home/rotate_album.dart';
