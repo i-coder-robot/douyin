@@ -1,7 +1,9 @@
+import 'package:douyin/components/city/same_city.dart';
 import 'package:douyin/providers/AtUserProvider.dart';
 import 'package:douyin/components/bottom/bottom_bar.dart';
 import 'package:douyin/pages/home.dart';
 import 'package:douyin/providers/recommend_provider.dart';
+import 'package:douyin/providers/same_city_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        //默认色
         primaryColor: Colors.black,
-        primaryColorDark: Colors.black,
       ),
       home: MyHomePage(),
     );
@@ -46,16 +48,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ChangeNotifierProvider(
               builder: (context)=>AtUserProvider(),
             ),
+            ChangeNotifierProvider(
+              builder:(context)=>SameCityProvider(),
+            )
           ],
-          child: Home(),
-//好友列表，吸顶效果
+          child: SameCity(selectedIndex: 1,),
+//          child: Home(),
+//          好友列表，吸顶效果
 //          child: FriendList(),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: rpx * 100.0,
           decoration: BoxDecoration(color: Colors.black),
-          child: BottomBar(),
+          child: BottomBar(selectedIndex: 0,),
         ),
       ),
     );

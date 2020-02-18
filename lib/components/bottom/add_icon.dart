@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 class AddIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var rpx = MediaQuery.of(context).size.width/750;
+    var iconHeight = 60*rpx;
+    var totalWidth = 50*rpx;
+    var eachSide = 8*rpx;
     return Container(
-      height: 40,
-      width: 60,
+      padding: EdgeInsets.symmetric(horizontal: 14*rpx),
+      height: iconHeight,
+      width: 150*rpx,
       child: Stack(
         children: <Widget>[
           Positioned(
-            width: 50,
-            height: 30,
+            width: totalWidth,
+            height: iconHeight,
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.cyan,
@@ -21,7 +26,7 @@ class AddIcon extends StatelessWidget {
           Positioned(
             width: 50,
             height: 30,
-            right: 0,
+            right: 2,
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.red,

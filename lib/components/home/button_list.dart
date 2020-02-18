@@ -108,6 +108,7 @@ class _ButtonListState extends State<ButtonList> {
           IconText(
               text: "${provider.favCount}",
               icon: !provider.isFav ? AnimatedIconWidget(
+                key:UniqueKey(),
                 stageList: stage1,
                 icon: Icons.favorite,
                 size: iconSize,
@@ -116,6 +117,7 @@ class _ButtonListState extends State<ButtonList> {
                   provider.tapFav();
                 },
             ):AnimatedIconWidget(
+                key:UniqueKey(),
                 stageList: stage3,
                 icon: Icons.favorite,
                 size: iconSize,
@@ -125,8 +127,6 @@ class _ButtonListState extends State<ButtonList> {
                 },
               ),
           ),
-
-
           //回复
           IconText(
             text: "111",
