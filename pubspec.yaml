@@ -28,6 +28,7 @@ dependencies:
   lpinyin: ^1.0.9
   sticky_headers: ^0.1.8+1
   dio: ^3.0.8
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:

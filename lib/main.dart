@@ -4,6 +4,7 @@ import 'package:douyin/components/bottom/bottom_bar.dart';
 import 'package:douyin/pages/home.dart';
 import 'package:douyin/providers/recommend_provider.dart';
 import 'package:douyin/providers/same_city_provider.dart';
+import 'package:douyin/providers/tab_bar_controller_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -50,10 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ChangeNotifierProvider(
               builder:(context)=>SameCityProvider(),
+            ),
+            ChangeNotifierProvider(
+              builder: (context)=>TabBarControllerProvider(),
             )
           ],
-          child: SameCity(selectedIndex: 1,),
-//          child: Home(),
+//          child: SameCity(selectedIndex: 1,),
+          child: Home(),
 //          好友列表，吸顶效果
 //          child: FriendList(),
       ),

@@ -1,4 +1,6 @@
+import 'package:douyin/providers/tab_bar_controller_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TopTab extends StatefulWidget {
   @override
@@ -6,18 +8,11 @@ class TopTab extends StatefulWidget {
 }
 
 class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
-  TabController _controller;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _controller = TabController(vsync: this, length: 2, initialIndex: 1);
-  }
-
   @override
   Widget build(BuildContext context) {
-    var rpx = MediaQuery.of(context).size.width/750;
+    TabBarControllerProvider provider =
+        Provider.of<TabBarControllerProvider>(context);
+    var rpx = MediaQuery.of(context).size.width / 750;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -26,10 +21,12 @@ class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
           child: Row(
             children: <Widget>[
               //利用row，内部加入SizedBox来增加宽度
-              SizedBox(width: 10,),
+              SizedBox(
+                width: 10,
+              ),
               Icon(
                 Icons.search,
-                size: rpx*60,
+                size: rpx * 60,
                 color: Colors.white,
               ),
             ],
@@ -51,7 +48,7 @@ class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
               // The text style of the unselected tab labels
               unselectedLabelStyle:
                   TextStyle(color: Colors.grey[700], fontSize: 20.0),
-              controller: _controller,
+              controller: provider.controller,
               tabs: <Widget>[
                 Text("关注"),
                 Text("推荐"),
@@ -64,7 +61,9 @@ class _TopTabState extends State<TopTab> with SingleTickerProviderStateMixin {
           child: Row(
             children: <Widget>[
               //利用row，内部加入SizedBox来增加宽度
-              SizedBox(width: 10.0,),
+              SizedBox(
+                width: 10.0,
+              ),
               Icon(
                 Icons.live_tv,
                 size: rpx * 60,
