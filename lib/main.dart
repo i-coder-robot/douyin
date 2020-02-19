@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         //默认色
-        primaryColor: Colors.black,
+//        primaryColor: Colors.black,
       ),
       home: MyHomePage(),
     );
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var rpx = MediaQuery.of(context).size.width / 750;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+//      backgroundColor: Colors.black,
       body: MultiProvider(
           providers: [
             ChangeNotifierProvider(

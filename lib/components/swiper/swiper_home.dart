@@ -32,7 +32,7 @@ class _SwiperHomeState extends State<SwiperHome> with AutomaticKeepAliveClientMi
       itemCount: items.length,
       itemBuilder: (BuildContext context,int index){
         var current = items[index];
-        return Image.network(current.photoAddr,fit: BoxFit.fitWidth,);
+        return Image.network(current.photoAddr,fit: BoxFit.cover,);
       },
     );
   }
