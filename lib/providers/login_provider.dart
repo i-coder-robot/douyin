@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class LoginProvider extends State<StatefulWidget>
     with ChangeNotifier, TickerProviderStateMixin {
   AnimationController controller;
+  TextEditingController userNameController;
   Animation<double> backgroundController;
   double opacityMain = 1.0;
   double opacityToChange = 0.0;
@@ -14,6 +15,8 @@ class LoginProvider extends State<StatefulWidget>
   Timer interval;
 
   LoginProvider() {
+
+    userNameController = TextEditingController();
 
     imageList = List<String>();
     for (var i=0;i<9;i++){

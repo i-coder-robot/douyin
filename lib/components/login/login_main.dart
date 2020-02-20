@@ -2,9 +2,12 @@ import 'package:douyin/providers/login_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'login_box.dart';
+
 class LoginMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var rpx = MediaQuery.of(context).size.width / 750;
     return Scaffold(
       body: Stack(
         //拉伸一下
@@ -12,6 +15,11 @@ class LoginMain extends StatelessWidget {
         children: <Widget>[
           BackgroundSlideMain(),
           BackgroundSlideToChange(),
+          Positioned(
+            left: 0,
+            top: 250 * rpx,
+            child: LoginBox(),
+          )
         ],
       ),
     );
